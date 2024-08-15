@@ -1,0 +1,32 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    width: 100%;
+    background-color: red;
+}
+.invoice-header{
+    font-size: 18px;
+    font-weight: 900;
+    border-bottom: 1px solid black;
+}
+.customer-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    border-bottom: 1px solid black;
+    font-weight: 900;
+}
+.product-list{
+    width: 80%;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

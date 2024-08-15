@@ -1,0 +1,55 @@
+<div class="customer">
+    <div class="container">
+        <h2>Add Customer</h2>
+<form (ngSubmit)="onSubmit()" #customerForm="ngForm">
+  <div>
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" name="customerName" [(ngModel)]="customer.customerName" required>
+  </div>
+  <div>
+    <label for="customerPhone">Customer Phone:</label>
+    <input type="text" id="customerPhone" name="customerPhone" [(ngModel)]="customer.customerPhone" required>
+  </div>
+  <div>
+    <label for="customerEmail">Customer Email:</label>
+    <input type="email" id="customerEmail" name="customerEmail" [(ngModel)]="customer.customerEmail" required>
+  </div>
+  <div>
+    <label for="customerAddress">Customer Address:</label>
+    <textarea id="customerAddress" name="customerAddress" [(ngModel)]="customer.customerAddress" required></textarea>
+  </div>
+  <div>
+    <label for="customerIdType">Customer ID Type:</label>
+    <input type="text" id="customerIdType" name="customerIdType" [(ngModel)]="customer.customerIdType" required>
+  </div>
+  <div>
+    <label for="customerId">Customer ID:</label>
+    <input type="text" id="customerId" name="customerId" [(ngModel)]="customer.customerId" required>
+  </div>
+  <div>
+    <label for="itemsPurchased">Items Purchased:</label>
+    <input type="text" id="itemsPurchased" name="itemsPurchased" [(ngModel)]="customer.itemsPurchased" required>
+  </div>
+  <div>
+    <label for="timeOfPurchase">Time of Purchase:</label>
+    <input type="time" id="timeOfPurchase" name="timeOfPurchase" [(ngModel)]="customer.timeOfPurchase" required>
+  </div>
+  <div>
+    <label for="dateOfPurchase">Date of Purchase:</label>
+    <input type="date" id="dateOfPurchase" name="dateOfPurchase" [(ngModel)]="customer.dateOfPurchase" required>
+  </div>
+  <div>
+    <label for="amountToBePaid">Amount to be Paid:</label>
+    <input type="number" id="amountToBePaid" name="amountToBePaid" [(ngModel)]="customer.amountToBePaid" required>
+  </div>
+  <div>
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate" name="dueDate" [(ngModel)]="customer.dueDate" required>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<button routerLink="/customerdetails">View Pending List</button>
+
+    </div>
+</div>

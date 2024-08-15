@@ -1,0 +1,96 @@
+.adjustment {
+    background: -webkit-linear-gradient(60deg , #14202e, #88A9C3);
+    /* background-image: url(../../../assets/img/clark-young-ueZXMrZFFKQ-unsplash.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.adjustment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.body-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+}
+
+
+.button {
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid white;
+    height: 20vh;
+    width: 90%;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 17px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+.button:hover {
+    background-color: #3a3a3a30;
+}
+
+.btn1 {
+    margin-bottom: .5%;
+    width: 100%;
+}
+
+
+mat-form-field{
+    width: 100%;
+    color: white;
+
+}
+input{
+    width: 100%;
+}
+
+
+mat-form-field {
+    width: 100%;
+    padding: 1%;
+}
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ffffff !important;
+}
+
+mat-label {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+}
+.delete-button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.delete{
+    color: white;
+    background-color: #e1a040;
+    width: 30%;
+    height: 40px;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+.delete:hover{
+    background-color: #14202e;
+}

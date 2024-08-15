@@ -1,0 +1,49 @@
+<div class="navbar" [ngClass]="{'is-scrolled': isScrolled}">
+    <div class="container">
+        <div class="container-1">
+            <div class="logo">
+                <h1>Dukkan Pe</h1>
+                <!-- <img src="../../../assets/img/Dukkan2.png" alt=""> -->
+            </div>
+        </div>
+
+        <!-- Display search results here -->
+
+        <div class="container-2">
+            <button routerLink="/dashboard">
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+            </button>
+            <button routerLink="/footercard">
+                <span class="material-symbols-outlined">
+                    book
+                </span>
+            </button>
+
+            <button>
+                <span class="material-symbols-outlined">
+                    support_agent
+                </span>
+            </button>
+
+            <button>
+                <span class="material-symbols-outlined">
+                    notifications
+                </span>
+            </button>
+            <button class="more">
+                <span class="material-symbols-outlined">
+                    more
+                    </span>
+                <div class="more-list">
+                    <a href="">Profile</a>
+                    <a href="">Inventory</a>
+                    <a href="">Stocks</a>
+                    <a href="">Notification</a>
+                    <a href="" (click)="logout()" routerLink="signin">Logout</a>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>

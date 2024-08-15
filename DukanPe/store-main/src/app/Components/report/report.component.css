@@ -1,0 +1,111 @@
+.report {
+    display: flex;
+    background-color: #177e67;
+    padding: 20px;
+  }
+    
+  .buttons {
+    margin-top: 100px;
+  }
+  
+  button {
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00b3a4;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styles for the animated buttons */
+.button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .button:hover::before {
+    opacity: 0.3;
+  }
+  
+  .button span {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    z-index: 1;
+  }
+  
+  .button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+  
+  .button:hover::after {
+    width: 100%;
+  }
+  
+  /* Additional styles for specific animated buttons */
+  .button.red {
+    background-color: #e74c3c;
+  }
+  
+  .button.red::before {
+    background-color: #e74c3c;
+  }
+  
+  .button.red::after {
+    background-color: #e74c3c;
+  }
+  
+  .button.blue {
+    background-color: #3498db;
+  }
+  
+  .button.blue::before {
+    background-color: #3498db;
+  }
+  
+  .button.blue::after {
+    background-color: #3498db;
+  }
+  
+  /* Add more styles for different variations of animated buttons */
+  
+  

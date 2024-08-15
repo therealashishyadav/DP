@@ -1,0 +1,83 @@
+<app-nav-bar></app-nav-bar>
+<div class="example-container mat-elevation-z8">
+    <div class="example-header">
+
+        <mat-table #table [dataSource]="productDetails">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="ID">
+                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pId}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="Item Name">
+                <mat-header-cell *matHeaderCellDef> Item Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemName}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="Item Price">
+                <mat-header-cell *matHeaderCellDef> Item Price </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemPrice}} </mat-cell>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="Item Quantity">
+                <mat-header-cell *matHeaderCellDef> Item Quantity </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemQuantity}} </mat-cell>
+            </ng-container>
+
+            <!-- itemPurchasedDate -->
+
+            <ng-container matColumnDef="Item Purchased Date">
+                <mat-header-cell *matHeaderCellDef> Item Purchased Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemPurchasedDate}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Item Sold Date">
+                <mat-header-cell *matHeaderCellDef> Item Sold Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemSoldDate}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Item Warranty Date">
+                <mat-header-cell *matHeaderCellDef> Item Warranty Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemWarrantyDate}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Item Available">
+                <mat-header-cell *matHeaderCellDef> Item Available </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.itemAvailable}} </mat-cell>
+            </ng-container>
+            <!-- Edit -->
+            <ng-container matColumnDef="Edit">
+                <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <!-- Delete -->
+            <ng-container matColumnDef="Delete">
+                <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="warn" (click)="deleteProduct(element.pId)" aria-label="Example icon button with a menu icon">
+                        <mat-icon>delete</mat-icon>
+                    </button> </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+            <span class="material-symbols-outlined">
+                edit
+            </span>
+
+        </mat-table>
+
+    </div>
+    <app-footer></app-footer>

@@ -1,0 +1,262 @@
+
+/* .navbar{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+
+}
+
+
+.logo img{
+    height: 8vh;
+}
+.container-2{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    border: none;
+    background-color: transparent;
+    outline:none;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(78, 78, 78);
+    height: 9vh;
+    border-top-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    width: 22%;
+    letter-spacing: 1px;
+
+}
+button:hover{
+    font-size: 14px;
+}
+
+.more-list {
+    display: none;
+    margin-top: 1.4%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #914110;
+    height: 200px;
+    width: 10%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.more-list a {
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 4%;
+    padding-top: 5%;
+    background-color: rgba(0, 128, 0, 0);
+    color: white;
+    text-decoration: none;
+}
+.more-list a:hover{
+    font-size:15px ;
+}
+
+.more:hover .more-list {
+    display: flex;
+} */
+/* 
+* {
+  z-index: 999;
+  background-color: rgba(190, 156, 156, 0);
+font-family: sans-serif;
+}
+.navbar.is-scrolled {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .navbar.is-scrolled {
+    background-color: #17252a;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .container-1 {
+    flex: 1;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .container-2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    color: #feffff;
+    font-size: 13px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  button:hover {
+    color: #deb3ad;
+  }
+  
+  .more {
+    position: relative;
+  }
+  
+  .more-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 10px;
+    background-color: navy;
+  }
+  
+  .more:hover .more-list {
+    display: block;
+  }
+  
+  .more-list a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .more-list a:hover {
+    text-decoration: underline;
+  }
+   */
+
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;;
+
+  }
+  
+  .navbar.is-scrolled {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background: -webkit-linear-gradient( #00000030, rgba(136, 169, 195, 0)); */
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .navbar.is-scrolled {
+    background-color: #88A9C3;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .container-1 {
+    flex: 1;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    color: #feffff;
+    font-size: 13px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+  }
+  
+  button:hover {
+    color: lightgray;
+  }
+  
+  .more {
+    position: relative;
+  }
+  
+  .more-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 10px;
+    background-color: #2b4257;
+  }
+  
+  .more:hover .more-list {
+    display: block;
+  }
+  
+  .more-list a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .more-list a:hover {
+    text-decoration: underline;
+  }
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 200,
+    'opsz' 48
+  }
+  .material-symbols-outlined {
+    font-size: 30px;
+    
+  }

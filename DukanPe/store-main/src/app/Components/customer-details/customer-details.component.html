@@ -1,0 +1,36 @@
+<h2>Customer List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>ID Type</th>
+            <th>ID Number</th>
+            <th>Items Purchased</th>
+            <th>Amount To Be Paid</th>
+            <th>Purchase Date</th>
+            <th>Due Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{ customer.customerName }}</td>
+            <td>{{ customer.customerPhone }}</td>
+            <td>{{ customer.customerEmail }}</td>
+            <td>{{ customer.customerAddress }}</td>
+            <td>{{ customer.customerIdType }}</td>
+            <td>{{ customer.customerId }}</td>
+            <td>{{ customer.itemsPurchased }}</td>
+            <td>{{ customer.amountToBePaid }}</td>
+            <td>{{ customer.purchaseDate }}</td>
+            <td>{{ customer.dueDate }}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="button-container">
+    <button class="button" (click)="goBack()">Go Back</button>
+</div>

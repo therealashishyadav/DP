@@ -1,0 +1,68 @@
+<app-nav-bar></app-nav-bar>
+<section class="Section-1">
+    <div class="container">
+        <div class="product-container">
+            <div class="container-1">
+                <h4>Add Product Here</h4>
+            </div>
+
+            <form action="">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Item Name</mat-label>
+                    <input matInput placeholder="Item Name" [(ngModel)]=product.itemName name="itemName" required="">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Item Price</mat-label>
+                    <input matInput name="itemPrice" placeholder="Item Price" [(ngModel)]=product.itemPrice required="">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Quantity of Item</mat-label>
+                    <input matInput name="itemQuantity" placeholder="Quantity of the Item"
+                        [(ngModel)]=product.itemQuantity required="">
+                </mat-form-field>
+
+                <!-- itemName: string;
+          itemPrice: number;
+          itemQuantity: number;
+          itemPurchasedDate: string;
+          itemSoldDate: string;
+          itemWarrantyDate: string;
+          itemAvailable: number; -->
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Purchased date of the Item</mat-label>
+                    <input matInput type="date" name="itemPurchasedDate" placeholder="Purchased Date of the Item"
+                        [(ngModel)]=product.itemPurchasedDate required="">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Sold Date of the Item</mat-label>
+                    <input matInput type="date" name="itemSoldDate" placeholder="Purchased Date of the Item"
+                        [(ngModel)]=product.itemSoldDate required="">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Warranty Date of the Item</mat-label>
+                    <input matInput type="date" name="itemWarrantyDate" placeholder="Warranty Dated for the Item"
+                        [(ngModel)]=product.itemWarrantyDate required="">
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Availabilty of Item</mat-label>
+                    <input matInput type="number" name="itemAvailable" placeholder="Availabilty of Item"
+                        [(ngModel)]=product.itemAvailable required>
+                </mat-form-field>
+
+                <div class=" button">
+                    <button (click)="addproduct()" type="submit" class=" add-product-btn ">Add</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

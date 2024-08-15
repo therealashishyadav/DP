@@ -1,0 +1,146 @@
+<app-nav-bar></app-nav-bar>
+<div class="billing">
+    <div class="container">
+        <div class="billing-form-list">
+            <form (ngSubmit)="submitForm()" #billingForm="ngForm">
+                <div class="customer-details">
+
+                    <h4>Customer Details</h4>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Name</mat-label>
+                        <input id="customerName" name="customerName" type="text" matInput placeholder="Customer Name"
+                            [(ngModel)]="bill.customerName">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Address</mat-label>
+                        <input id="customerAddress" name="customerAddress" type="text" matInput
+                            placeholder="Customer Address" [(ngModel)]="bill.address">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Email</mat-label>
+                        <input id="email" name="email" type="text" matInput placeholder="Customer Email"
+                            [(ngModel)]="bill.email">
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Phone</mat-label>
+                        <input id="phone" name="phone" type="text" matInput placeholder="Customer Phone"
+                            [(ngModel)]="bill.phone">
+                    </mat-form-field>
+
+                </div>
+                <div class="product">
+                    <div class="product-details">
+
+                        <h4>Product Details</h4>
+
+                        <!-- <mat-form-field appearance="outline">
+                            <mat-label>Item Name</mat-label>
+                            <input type="text" matInput [matAutocomplete]="auto" (input)="searchItemName($event)">
+                            <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option *ngFor="let itemName of itemNames" [value]="itemName">
+                                {{ itemName }}
+                              </mat-option>
+                            </mat-autocomplete>
+                          </mat-form-field> -->
+
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Item Name</mat-label>
+                            <input id="modelNumber" name="modelNumber" type="text" matInput placeholder="Model Number"
+                                [(ngModel)]="bill.itemName">
+                        </mat-form-field>
+
+                        <!-- <label for="itemName">Item Name</label>
+                        <input id="itemName" name="itemName" type="text" [(ngModel)]="itemName"
+                            [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let item of itemNames" [value]="item">{{ item }}</mat-option>
+                        </mat-autocomplete> -->
+
+                        <!-- <mat-form-field appearance="outline">
+                            <input type="text" placeholder="Item Name" matInput [formControl]="itemNameControl" [matAutocomplete]="auto" [(ngModel)]="bill.itemName">
+                            <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option *ngFor="let item of filteredItemNames" [value]="item">
+                                {{ item }}
+                              </mat-option>
+                            </mat-autocomplete>
+                          </mat-form-field> -->
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Model Number</mat-label>
+                            <input id="modelNumber" name="modelNumber" type="text" matInput placeholder="Model Number"
+                                [(ngModel)]="bill.modelNumber">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>IMEI Number</mat-label>
+                            <input id="imeiNumber" name="imeiNumber" type="text" matInput placeholder="IMEI Number"
+                                [(ngModel)]="bill.imeiNumber">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>SI. Number</mat-label>
+                            <input id="siNumber" name="siNumber" type="text" matInput placeholder="SI. Number"
+                                [(ngModel)]="bill.siNumber">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-select placeholder="Payment Method" [(ngModel)]="bill.paymentMethod">
+                                <mat-option>None</mat-option>
+                                <mat-option value="option1">Cash</mat-option>
+                                <mat-option value="option2">UPI</mat-option>
+                                <mat-option value="option3">Debit Card</mat-option>
+                                <mat-option value="option3">Credit Card</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="price-cal">
+
+                        <h4>Pricing</h4>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Quantity</mat-label>
+                            <input id="quantity" name="quantity" type="text" matInput placeholder="Quantity"
+                                [(ngModel)]="bill.quantity" (input)="calculateTotal()">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Amount</mat-label>
+                            <input id="amount" name="amount" type="text" matInput placeholder="Amount"
+                                [(ngModel)]="bill.amount" (input)="calculateTotal()">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cashback</mat-label>
+                            <input id="cashback" name="cashback" type="text" matInput placeholder="Cashback"
+                                [(ngModel)]="bill.cashback" (input)="calculateTotal()">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Discount</mat-label>
+                            <input id="discount" name="discount" type="text" matInput placeholder="Discount"
+                                [(ngModel)]="bill.discount" (input)="calculateTotal()">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Total</mat-label>
+                            <input id="total" name="total" type="text" matInput placeholder="Total"
+                                [(ngModel)]="bill.total" (input)="calculateTotal()">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <button type="submit" mat-raised-button color="primary">Save Data & Generate Invoice</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<br>
+<app-footer></app-footer>

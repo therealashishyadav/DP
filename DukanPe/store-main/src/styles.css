@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: sans-serif;
+}
+ @font-face {
+    font-family: 'Didot';
+    src: url('./assets/fonts/DidotRegular.ttf') format('truetype');
+  }
+html, body { height: 100%; }
+body {
+     margin: 0; 
+     /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+
+
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #2b4257;
+    /* margin-top: 2%; */
+}

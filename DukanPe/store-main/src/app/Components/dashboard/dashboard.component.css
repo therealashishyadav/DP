@@ -1,0 +1,265 @@
+/* .dashboard {
+    display: flex;
+    flex-direction: column;
+
+}
+img{
+    height:60vh;
+    border: 15px solid white;
+}
+.image-container {
+    position: relative;
+  }
+  
+  .image-container img {
+    width: 300px; 
+    height: auto;
+    transition: transform 0.3s ease; 
+  }
+  
+  .image-container img:hover {
+    transform: scale(1.2); 
+  }
+  .image-container img {
+    opacity: 0; 
+    animation: fade-in 1s ease forwards; 
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+    
+.banner {
+    display: flex;
+    padding:20%;
+    align-items: center;
+    justify-content: center;
+    color: #f9f1f0;
+    height: 70vh;
+    background-color: lightsalmon;
+    width: 100%;
+
+}
+.text {
+    text-align: center;
+    margin-top: 100px;
+    padding-left: 20%;
+  }
+  
+  h6 {
+    font-size: 18px;
+    color: #888;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+.banner h6{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #17252a;
+}
+
+p{
+    
+    color: #17252a;
+}
+
+.button {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    height: 20vh;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: lightsalmon;
+    transition: .3s all ease-in-out;
+} */
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  img {
+    height: 10vh;
+    border-radius: 45px;
+  }
+  
+  .image-container {
+    position: relative;
+    height: 40vh;
+  }
+  
+  .image-container img {
+    width: 330px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container:hover {
+    transform: scale(1.2);
+  }
+  
+  .image-container img {
+    opacity: 0;
+    animation: fade-in 1s ease forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .banner {
+    display: flex;
+    padding: 20%;
+    align-items: center;
+    justify-content: center;
+    color: #f9f1f0;
+    height: 70vh;
+    overflow: hidden;
+    background-color: #091235; /* Royal Blue */
+    width: 100%;
+    font-family: "Roboto", sans-serif;;
+  }
+  
+  .text {
+    text-align: center;
+    margin-top: 100px;
+    padding-left: 20%;
+  }
+  
+  h6 {
+    font-size: 18px;
+    color: #ffffff; /* Midnight Blue */
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff; /* Midnight Blue */
+    margin: 20px 0;
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .banner h6 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff; /* Midnight Blue */
+  }
+  
+  p {
+    color: #ffffff; /* Midnight Blue */
+  }
+  
+  .button {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button {
+    height: 20vh;
+    width: 100%;
+    background-color: #88A9C3; /* Blue Gray */
+    color: rgb(51, 51, 51);
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button:hover {
+    background-color: #14202E; /* Navy Blue */
+    transition: 0.3s all ease-in-out;
+    color: white;
+  }
+  

@@ -1,0 +1,366 @@
+/* 
+*{       
+    color: #734b1a;
+
+}
+.account-form-field{
+    background-image: url(../../../img/leone-venter-VieM9BdZKFo-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1,h2,p{
+    color: #14202e;
+}
+p{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.form-section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    background: none;
+}
+.description{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20%;
+}
+.account-container{
+    padding: 2%;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+}
+.form-input-feild{
+    width: 100%;
+    background: none;
+}
+mat-label{
+    color: #14202e;
+    font-weight: 400;
+    font-size: 14px;
+}
+.register-button, .signin-button{
+    padding: 12px 24px;
+    background-color: #800020;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.register-button:hover, .signin-button:hover{
+    background-color: #6b3fa0;
+}
+mat-input::placeholder {
+    color: #999999;
+  }
+a{
+    color: #14202e;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #14202e!important;
+}
+input{
+    border-color: #14202e;
+}
+.p{
+    text-decoration: none;
+    cursor :text;
+} */
+
+/* part 2 */
+
+
+/* 
+.part2-container {
+
+    display: flex;
+    height: 120vh;
+    width: 100%;
+    background-color: #14202E;
+    background-image: url(../../../img/milad-fakurian-PGdW_bHDbpI-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-container {
+    width: 100%;
+    height: 67vh;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: black 0px 20px 30px -10px;
+}
+    .personal-details{
+    
+    width: 50%;
+    height: 67vh;
+    background-color: #2b425794;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white!important;
+}
+.personal-details mat-label, h6{
+    color: white;
+}
+
+.contact-details{
+    width: 50%;
+    height: 67vh;
+    background-color: #88a9c380;
+        display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+a{
+    color: #14202e;
+    text-decoration: none;
+    cursor: none;
+}
+.contact-details ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black!important;
+}
+.contact-details mat-label{
+    color: black;
+}
+.register-button, .signin-button{
+    color: white;
+    background-color: #2b4257;
+    width: 40%;
+    height: 40px;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+} */
+* {
+  color: #2c2c2c;
+  font-family: sans-serif;
+}
+span{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.219);
+  border-radius: 99px;
+}
+.account-form-field {
+  /* background-color: #14202E; */
+  background: -webkit-linear-gradient(60deg , #14202e, #88A9C3);
+
+  /* background: linear-gradient(#091235, white); */
+}
+
+h1,p{
+  color: #ffffff;
+}
+
+/* p {
+  text-transform: capitalize; */
+/* } */
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease-in-out;  
+  font-size: 24px;
+  animation: slideIn 1s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.description:hover {
+  color: #14202e;
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-6%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.account-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-form-container{
+  display: flex;
+}
+.form-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 9px;
+  margin-left: 15%;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  
+
+}
+
+.form-input-feild {
+  width: 100%;
+  background: none;
+}
+
+mat-label {
+  color: #4b4b4b;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.register-button,
+.signin-button {
+  padding: 12px 24px;
+  background-color: #14202e;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform:capitalize;
+  /* letter-spacing: 1px; */
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.register-button:hover,
+.signin-button:hover {
+  background-color: #091235;
+}
+
+mat-input::placeholder {
+  color: #999999;
+
+}
+
+a {
+  color: #14202E;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #14202E !important;
+}
+
+input {
+  border-color: #14202E;
+}
+
+.p {
+  text-decoration: none;
+  cursor: text;
+}
+
+.footer {
+  background-color: #88A9C3;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+}
+
+.line {
+  height: 1px;
+  background-color: #091235;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #88A9C3;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+footer {
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-items {
+  flex: 1;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-items h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-items a {
+  display: block;
+  color: #091235;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.footer-items a:hover {
+  text-decoration: underline;
+}
+
+.footer-2 {
+  margin-top: 20px;
+}
+
+.footer-2 h6 {
+  font-size: 14px;
+  color: #091235;
+  margin-bottom: 5px;
+}
+
+.footer-2 p {
+  font-size: 12px;
+  color: #091235;
+  margin: 0;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  padding: 2%;
+
+}
+.button-conatiner{
+  display: flex;
+}

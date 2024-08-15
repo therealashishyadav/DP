@@ -1,0 +1,416 @@
+Databases
+    1. Product details
+        Path : 8080 
+            Id
+            Item Name
+            Item Price
+            Item Quantity
+            Item Purchase Date
+            
+    2. Paylater
+        Path : 8081
+    4. Add products 
+        Path : 8083
+    5.  Personal details(done)
+        Path : 8084
+            Id
+            Username
+            Full Name
+            Email
+            Phone
+            Password(hashcode)
+        
+            Shop details
+            Id
+            Shop Name
+            Shop Address
+            Shop Number 
+            Shop email 
+    6. Shop business details(done)
+        Path : 8085
+            Business Number
+            GST Number
+            
+    7.  Billing 
+ I   RETREVING SHOP Details
+    1. SHOP Name
+    2. Address
+    3. Phone
+    4. PAN
+    5. GSTIN
+    6. DATE
+    7. Invoice Number
+
+  II  Customer Details
+    Customer Name
+    Address
+    Post
+    Pin
+    Email
+    Phone
+    
+  III  Product Details
+
+    A. Description of goods
+        1.Model Number
+        2. IMEI Number
+        3.SI. NO
+    B. MODE OF PAYMENT
+        1. CASH,
+        2. UPI
+        3. CREDIT CARD
+        4. DEBIT CARD
+    C. Quantity
+    D. Rate 
+    E. AMOUNT
+    F. CASHBACK
+    G. DISCOUNT
+    SHOW TAX AND GST NUMBER AND GST PERCENTAGE
+    I. TOTAL IN WORDS
+    J. TOTAL IN Number
+
+    AREA FOR CUSTOMER SIGNATURE
+    AREA FOR RETAILER SIGNATURE
+    AREA FOR STAMP
+
+    buttons
+    save data and generate an invoice to print
+
+        Path : 8086
+
+        Profile
+I. Edit
+        username
+        fullName
+        mobileNumber
+        emailId
+        password
+        shopName
+        shopAddress
+        shopPhone
+        shopEmail
+II. More 
+    GSTIN
+
+III
+
+
+        
+    
+user and shop details
+
+
+
+
+
+
+
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { InvoiceService } from 'src/app/invoice.service';
+import { Invoice } from '../Entity/Invoice';
+
+@Component({
+  selector: 'app-invoice-form',
+  templateUrl: './invoice-form.component.html',
+  styleUrls: ['./invoice-form.component.css']
+})
+export class InvoiceFormComponent {
+  invoiceForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private invoiceService: InvoiceService
+  ) {
+    const today = new Date().toISOString().substr(0, 10); // Get today's date in YYYY-MM-DD format
+
+    this.invoiceForm = this.formBuilder.group({
+      customerName: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      products: this.formBuilder.array([this.createProductGroup()]),
+      tax: ['', Validators.required],
+      discount: ['', Validators.required],
+      total: [{ value: 0, disabled: true }],
+      date: [today, Validators.required] // Set today's date as the default value
+    });
+  }
+
+  get products(): FormArray {
+    return this.invoiceForm.get('products') as FormArray;
+  }
+
+  createProductGroup(): FormGroup {
+    return this.formBuilder.group({
+      productName: ['', Validators.required],
+      productQuantity: ['', Validators.required],
+      productPrice: ['', Validators.required]
+    });
+  }
+
+  addProductField(): void {
+    this.products.push(this.createProductGroup());
+    this.calculateTotal();
+  }
+
+  removeProductField(index: number): void {
+    this.products.removeAt(index);
+    this.calculateTotal();
+  }
+
+  public savedTotal: number;
+
+  calculateTotal(): void {
+    const products = this.invoiceForm.get('products') as FormArray;
+    let total = 0;
+  
+    products.controls.forEach((productGroup: FormGroup) => {
+      const quantity = productGroup.get('productQuantity').value;
+      const price = productGroup.get('productPrice').value;
+      if (quantity && price) {
+        total += quantity * price;
+      }
+    });
+  
+    const tax = this.invoiceForm.get('tax').value;
+    const discount = this.invoiceForm.get('discount').value;
+  
+    if (tax) {
+      total += (total * tax) / 100;
+    }
+  
+    if (discount) {
+      total -= (total * discount) / 100;
+    }
+    this.invoiceForm.patchValue({ total });
+  this.savedTotal = total;
+  this.savedTotal = Math.round(this.savedTotal);
+  }
+  
+
+  onSubmit(): void {
+    if (this.invoiceForm.invalid) {
+      return;
+    }
+
+    const invoice: Invoice = this.invoiceForm.value;
+    this.invoiceService.saveData(invoice).subscribe(
+      (response) => {
+        // Handle success response
+      },
+      (error) => {
+        // Handle error response
+      }
+    );
+  }
+
+  generateInvoice(): void {
+    // Generate the invoice using the form data
+    const invoiceData = this.invoiceForm.value;
+    
+    // Assuming you have an InvoiceService to handle saving the invoice data
+    this.invoiceService.saveData(invoiceData).subscribe(
+      (response) => {
+        // Handle successful response, e.g., show a success message or navigate to a confirmation page
+        console.log('Invoice saved successfully:', response);
+        
+        // Print the invoice
+        this.printInvoice(invoiceData);
+      },
+      (error) => {
+        // Handle error response, e.g., show an error message
+        console.error('Failed to save invoice:', error);
+      }
+    );
+  }
+  
+  printInvoice(invoiceData: Invoice): void {
+    const invoiceTemplate = `
+    <html>
+    <style>
+    /* Global styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Invoice container */
+.invoice {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Invoice header */
+.invoice h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color : red;
+}
+
+/* Customer details */
+.customer-details {
+  margin-bottom: 30px;
+}
+
+.customer-details h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.customer-details p {
+  margin: 5px 0;
+}
+
+/* Product table */
+.product-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.product-table th,
+.product-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #f0f0f0;
+}
+
+.product-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Totals section */
+.totals {
+  text-align: right;
+}
+
+.totals h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.totals p {
+  margin: 5px 0;
+}
+
+/* Print button */
+.print-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.print-button button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.print-button button:hover {
+  background-color: #45a049;
+}
+
+
+    </style>
+    <body>
+    <div class="invoice">
+    <h2>Invoice</h2>
+    
+    <div class="customer-details">
+      <h3>Customer Details</h3>
+      <p> Date : ${invoiceData.date} </p>
+      <p>Customer Name: ${invoiceData.customerName}</p>
+      <p>Phone Number: ${invoiceData.phoneNumber}</p>
+    </div>
+    
+    <div class="product-table">
+      <h3>Product Details</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${invoiceData.products.map(product => `
+            <tr>
+              <td>${product.productName}</td>
+              <td>${product.productQuantity}</td>
+              <td>${product.productPrice}</td>
+              <td>${product.productQuantity * product.productPrice}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="totals">
+      <h3>Totals</h3>
+      <p>Tax: ${invoiceData.tax}</p>
+      <p>Discount: ${invoiceData.discount}</p>
+      <p>Total: ${this.savedTotal}</p>
+    </div>
+  </div>
+  </body>
+  </html>
+    `;
+  
+    // Open a new window to display and print the invoice
+    const printWindow = window.open('', '_blank');
+    printWindow.document.open();
+    printWindow.document.write(invoiceTemplate);
+    printWindow.document.close();
+  
+    // Trigger the print function for the new window
+    printWindow.print();
+  }
+  
+
+}
+
+
+
+Set up the project: Create a new Spring Boot project using your preferred IDE or Spring Initializr (https://start.spring.io/).
+
+Database connectivity: Configure the Spring Boot application to connect to the inventory and billing databases. Use appropriate database drivers and connection properties in the application.properties or application.yml file.
+
+Create data models: Define Java classes representing the entities in the inventory and billing databases. Use annotations like @Entity, @Table, and @Column to map the entities to the database tables.
+
+Create repositories: Define Spring Data JPA repositories for the inventory and billing entities. These repositories will provide the necessary methods to query and retrieve data from the databases.
+
+Create services: Implement services that utilize the repositories to fetch the required data from the inventory and billing databases. These services will handle the business logic for generating sales reports.
+
+Create controllers: Build RESTful APIs using Spring Web to expose the necessary endpoints for generating sales reports. These endpoints will invoke the services to fetch the required data and generate the reports.
+
+Set up the project: Create a new Spring Boot project using your preferred IDE or Spring Initializr (https://start.spring.io/).
+
+Database connectivity: Configure the Spring Boot application to connect to the inventory and billing databases. Use appropriate database drivers and connection properties in the application.properties or application.yml file.
+
+Create data models: Define Java classes representing the entities in the inventory and billing databases. Use annotations like @Entity, @Table, and @Column to map the entities to the database tables.
+
+Create repositories: Define Spring Data JPA repositories for the inventory and billing entities. These repositories will provide the necessary methods to query and retrieve data from the databases.
+
+Create services: Implement services that utilize the repositories to fetch the required data from the inventory and billing databases. These services will handle the business logic for generating sales reports.
+
+Create controllers: Build RESTful APIs using Spring Web to expose the necessary endpoints for generating sales reports. These endpoints will invoke the services to fetch the required data and generate the reports.
+
+requests to the backend API endpoints responsible for generating sales reports. Handle the responses appropriately and retrieve the generated report data.
+
+Display the report: Design the UI to present the sales report to the user. You can use tables, charts, or any other suitable visualization components to showcase the report data.
+
+Schedule report generation: Use Angular's RxJS library to schedule a task that automatically triggers the API request for generating the sales report at a specific interval. This can be achieved using the interval() function or other similar approaches.
+
+Styling and customization: Apply CSS styles and customize the UI as per your requirements to enhance the overall look and feel of the sales report.
+
+Remember to configure the backend and frontend projects to communicate with each other by specifying the appropriate API endpoints and ensuring CORS (Cross-Origin Resource Sharing) is correctly configured.

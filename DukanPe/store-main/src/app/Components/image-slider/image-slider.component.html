@@ -1,0 +1,9 @@
+<div class="slider-container">
+    <div class="slider" [ngStyle]="{'transform': 'translateX(' + transform + '%)'}">
+      <img *ngFor="let image of images; let i = index" [src]="image" alt="Slide Image" [class.active]="currentSlide === i">
+    </div>
+    <!-- <div class="radio-buttons">
+      <span *ngFor="let image of images; let i = index" class="radio-button" [class.active]="currentSlide === i" (click)="goToSlide(i)"></span>
+    </div> -->
+  </div>
+  

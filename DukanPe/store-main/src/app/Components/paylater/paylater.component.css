@@ -1,0 +1,77 @@
+.customer {
+  background-color: #feffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.customer .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customer h2 {
+  color: #17252a;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.customer form div {
+  margin-bottom: 10px;
+}
+
+.customer form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.customer form input[type="text"],
+.customer form input[type="email"],
+.customer form textarea,
+.customer form input[type="time"],
+.customer form input[type="date"],
+.customer form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2b7a78;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.customer form button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2b7a78;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.customer form button[type="submit"]:hover {
+  background-color: #3aafa9;
+}
+
+.customer button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2b7a78;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.customer button:hover {
+  background-color: #3aafa9;
+}

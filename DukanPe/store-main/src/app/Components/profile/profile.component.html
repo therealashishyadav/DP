@@ -1,0 +1,39 @@
+<div>
+    <h2>Profile Information</h2>
+    <div *ngIf="!isProfileEditMode">
+      <p><strong>Username:</strong> {{ credential.username }}</p>
+      <p><strong>Full Name:</strong> {{ credential.fullName }}</p>
+      <p><strong>Mobile Number:</strong> {{ credential.mobileNumber }}</p>
+      <p><strong>Email ID:</strong> {{ credential.emailId }}</p>
+      <p><strong>Password:</strong> {{ credential.password }}</p>
+      <button (click)="toggleProfileEditMode()">Edit Profile</button>
+    </div>
+  
+    <div *ngIf="isProfileEditMode">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="credential.username">
+  
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" [(ngModel)]="credential.fullName">
+  
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="text" id="mobileNumber" [(ngModel)]="credential.mobileNumber">
+  
+      <label for="emailId">Email ID:</label>
+      <input type="text" id="emailId" [(ngModel)]="credential.emailId">
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="credential.password">
+  
+      <button (click)="saveCredential()">Save Profile</button>
+      <button (click)="toggleProfileEditMode()">Cancel</button>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <div>
+    <h2>Edit Shops</h2>
+    <div *ngFor="let shop of shops">
+     
+  

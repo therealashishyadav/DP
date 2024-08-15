@@ -1,0 +1,214 @@
+<!-- <div class="account-form-field">
+  <div class="container">
+    <div class="form-section">
+
+      <div class="description">
+        <H1>Register !</H1>
+        <h2>On Dukkan Pe</h2>
+        <p>Save your Precious Time</p>
+        <p>&#10003; Inventory &#10003; Management &#10003; Stocks &#10003; Transactions   </p>
+      </div>
+
+      <div class="account-container">
+
+        <form action="" class="form-container">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" [(ngModel)]=user.username name="userName" required minlength="2" >
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-input-feild">
+            <mat-label>Firstname</mat-label>
+            <input matInput placeholder="Firstname" [(ngModel)]=user.firstName name="firstName" required="">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Lastname</mat-label>
+            <input matInput placeholder="Lastname" [(ngModel)]=user.lastName name="lastName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Shop Name</mat-label>
+            <input matInput placeholder="Shop Name" [(ngModel)]=user.shopName name="shopName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" [(ngModel)]=user.mobileNumber name="mobileNumber" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Address" [(ngModel)]=user.address name="address" required> 
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email Id</mat-label>
+            <input matInput placeholder="Email Id" [(ngModel)]=user.emailId name="emailId" required>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" [(ngModel)]=user.password name="password" required minlength="8">
+          </mat-form-field>
+
+
+          <div class="form-check d-flex justify-content-center mb-5">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+            <label class="form-check-label" for="form2Example3">
+              I agree all statements in <a href="#!">Terms of service</a>
+            </label>
+          </div>
+
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button type="button" class="register-button" (click)="saveUser()">Register</button>
+          </div>
+
+          <a class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p">
+            Already have an account click below to Sign In</a>
+
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button type="button" class="signin-button" routerLink="/signin">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+ -->
+
+<div class="account-form-field">
+  <div class="container">
+    <div class="form-section">
+      <div class="account-container">
+        
+        <div class="description">
+          <h1>Register</h1>
+          <h1>Here</h1>
+          <span class="material-symbols-outlined">
+            arrow_forward
+            </span>
+        </div>
+
+        <form action="" class="form-container" (ngSubmit)="saveUser()" (ngSubmit)="saveShop()" #registrationForm="ngForm">
+          <div class="full-form-container">
+            <div class="personal">
+
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" [(ngModel)]="user.username" name="userName" required
+                  minlength="2">
+                <mat-error
+                  *ngIf="registrationForm.controls['userName'].invalid && (registrationForm.controls['userName'].dirty || registrationForm.controls['userName'].touched)">
+                  Username is required and must be at least 2 characters long.
+                </mat-error>
+              </mat-form-field>
+
+
+              
+              <mat-form-field class="form-input-feild">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Full Name" [(ngModel)]="user.fullName" name="fullName" required>
+                <mat-error
+                  *ngIf="registrationForm.controls['fullName'].invalid && (registrationForm.controls['fullName'].dirty || registrationForm.controls['fullName'].touched)">
+                  Firstname is required.
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Phone Number" [(ngModel)]="user.mobileNumber" name="mobileNumber" required>
+                <mat-error
+                  *ngIf="registrationForm.controls['mobileNumber'].invalid && (registrationForm.controls['mobileNumber'].dirty || registrationForm.controls['mobileNumber'].touched)">
+                  Phone Number is required.
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Address" [(ngModel)]="user.shopAddress" name="address" required>
+                <mat-error
+                  *ngIf="registrationForm.controls['address'].invalid && (registrationForm.controls['address'].dirty || registrationForm.controls['address'].touched)">
+                  Address is required.
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Email Id" [(ngModel)]="user.emailId" name="emailId" required>
+                <mat-error
+                  *ngIf="registrationForm.controls['emailId'].invalid && (registrationForm.controls['emailId'].dirty || registrationForm.controls['emailId'].touched)">
+                  Email Id is required.
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" [(ngModel)]="user.password" name="password" required
+                  minlength="8">
+                <mat-error
+                  *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)">
+                  Password is required and must be at least 8 characters long.
+                </mat-error>
+              </mat-form-field>
+
+              <a class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p">
+                Already have an account? Click below to Sign In</a>
+
+
+            </div>
+            <div class="shop-container">
+
+              <mat-form-field>
+                <mat-label>Shop Name</mat-label>
+                <input matInput placeholder="Shop Name" [(ngModel)]="shop.shopName" name="shopName" required>
+                <mat-error
+                  *ngIf="registrationForm.controls['shopName'].invalid && (registrationForm.controls['shopName'].dirty || registrationForm.controls['shopName'].touched)">
+                  Shop Name is required.
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Shop Email</mat-label>
+                <input matInput placeholder="Shop Email (Optional)" [(ngModel)]="shop.shopEmail" name="shopEmail">
+              </mat-form-field>
+
+
+              <mat-form-field>
+                <mat-label>Shop Contact Number</mat-label>
+                <input matInput placeholder="Shop Contact Number (Optional)" [(ngModel)]="shop.shopPhone" name="shopPhone">
+              </mat-form-field>
+
+              <div class="form-check d-flex justify-content-center mb-5">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required>
+                <label class="form-check-label" for="form2Example3">
+                  I agree to all statements in <a href="#!">Terms of service</a>
+                </label>
+              </div>
+
+
+
+            </div>
+          </div>
+          <div class="button-conatiner">
+
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button type="button" class="signin-button" routerLink="/signin">Sign In</button>
+            </div>
+
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button type="submit" class="register-button" [disabled]="registrationForm.invalid">Register</button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

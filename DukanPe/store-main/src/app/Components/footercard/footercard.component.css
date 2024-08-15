@@ -1,0 +1,81 @@
+.about
+{
+    display: flex;
+  background-image: url(../../../assets/img/ty.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+.about-section{
+    margin-top: 100px;
+
+}
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  /* Transition effect */
+  .transition {
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect on headings */
+  h1:hover,
+  h2:hover,
+  h3:hover,
+  h4:hover,
+  h5:hover,
+  h6:hover {
+    color: #4CAF50;
+    cursor: pointer;
+  }
+  
+  /* Hover effect on paragraphs and list items */
+  p:hover,
+  li:hover {
+    color: #4CAF50;
+    cursor: pointer;
+  }
+  
